@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Md. Julfikar Islam</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&display=swap"
+    />
+    <script>
+      // Apply the saved (or system) theme before first paint to avoid a flash.
+      ;(function () {
+        var stored = null
+        try {
+          stored = localStorage.getItem('theme')
+        } catch (e) {}
+        var dark = stored
+          ? stored === 'dark'
+          : window.matchMedia('(prefers-color-scheme: dark)').matches
+        document.documentElement.classList.toggle('dark', dark)
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- Static copy of the React contact form so Netlify Forms detects it at deploy time.
+         Field names must match src/utils/contactForm.ts. -->
+    <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="subject" />
+      <textarea name="message"></textarea>
+      <input type="text" name="bot-field" />
+    </form>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+@import 'tailwindcss';
+@config '../tailwind.config.ts';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+
+  html.dark {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-white font-sans text-gray-900 antialiased dark:bg-gray-950 dark:text-gray-100;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary-600 dark:outline-primary-400;
+  }
+
+  /* Keep anchored sections clear of the sticky navbar */
+  [id] {
+    scroll-margin-top: 5rem;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
