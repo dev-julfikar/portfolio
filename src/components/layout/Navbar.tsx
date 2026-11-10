@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react'
-import { Link, NavLink } from 'react-router'
+import { Link, NavLink, useLocation } from 'react-router'
 import { navLinks } from '../../data/navigation'
 import { profile } from '../../data/profile'
 import { CloseIcon, MenuIcon } from '../ui/Icons'
@@ -18,19 +18,21 @@ interface NavItemProps {
   children: ReactNode
 }
 
-// Page routes highlight when active; "/#section" links scroll within the home page and never do.
+// "/" only highlights on the home page itself (`end`), not on every route beneath it.
+// Re-clicking the current page's link returns to the top, since the URL doesn't change.
 function NavItem({ to, className, onClick, children }: NavItemProps) {
-  if (to.includes('#')) {
-    return (
-      <Link to={to} onClick={onClick} className={`${className} ${idleClass}`}>
-        {children}
-      </Link>
-    )
+  const { pathname } = useLocation()
+
+  const handleClick = () => {
+    if (pathname === to) window.scrollTo({ top: 0 })
+    onClick?.()
   }
+
   return (
     <NavLink
       to={to}
-      onClick={onClick}
+      end={to === '/'}
+      onClick={handleClick}
       className={({ isActive }) => `${className} ${isActive ? activeClass : idleClass}`}
     >
       {children}

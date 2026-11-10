@@ -35,7 +35,7 @@ export interface Skill {
 
 export interface NavLink {
   label: string
-  /** Router path, e.g. "/projects", or "/#about" for a section on the home page */
+  /** Router path, e.g. "/" or "/projects" */
   href: string
 }
 
