@@ -16,7 +16,7 @@ export const profile: Profile = {
   alumni: 'KUETian',
   openToWork: true,
   headline:
-    'IT Engineer with 10+ years of experience bridging technical operations, data analytics and application development to drive enterprise efficiency.',
+    'An engineer who thinks in data, with 10+ years of building dependable enterprise systems across telecom, banking and public service, and a growing focus on AI.',
   summary:
     'IT Engineer with 10+ years of experience bridging technical operations, data analytics and application development to drive enterprise efficiency. Skilled in end-to-end problem resolution, system optimization and building automated solutions that cut operational expenses. Combines strong analytical acumen with hands-on technical support to translate complex stakeholder requirements into high-impact software and data-driven results.',
   interests: [
