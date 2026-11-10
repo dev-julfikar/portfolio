@@ -3,6 +3,7 @@ import photo from '../assets/images/profile.webp'
 
 export const profile: Profile = {
   name: 'Md. Julfikar Islam',
+  brand: 'Julfikar',
   title: 'Assistant Computer Programmer',
   location: 'Computer Center (L-3), RUET',
   phone: '+8801736889934',

@@ -59,6 +59,8 @@ export interface Certification {
 
 export interface Profile {
   name: string
+  /** Short name shown as the navbar logo, e.g. <Julfikar /> */
+  brand: string
   title: string
   location: string
   phone: string

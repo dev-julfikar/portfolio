@@ -1,5 +1,6 @@
 import { profile } from '../../data/profile'
 import { MailIcon } from '../ui/Icons'
+import Logo from '../ui/Logo'
 import { socialIcons } from '../ui/socialIcons'
 
 const iconLinkClass =
@@ -12,7 +13,7 @@ function Footer() {
     <footer className="border-t border-gray-200 dark:border-gray-800">
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-4 py-8 sm:flex-row sm:justify-between">
         <p className="text-sm text-gray-600 dark:text-gray-400">
-          © {year} {profile.name}
+          © {year} <Logo />
         </p>
 
         <ul className="flex items-center gap-1">

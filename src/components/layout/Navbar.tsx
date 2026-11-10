@@ -4,6 +4,7 @@ import { navLinks } from '../../data/navigation'
 import { profile } from '../../data/profile'
 import { CloseIcon, MenuIcon } from '../ui/Icons'
 import { navIcons } from '../ui/navIcons'
+import Logo from '../ui/Logo'
 import ThemeToggle from '../ui/ThemeToggle'
 
 const linkClass =
@@ -64,9 +65,10 @@ function Navbar() {
         <Link
           to="/"
           onClick={closeMenu}
+          aria-label={`${profile.name}, home`}
           className="rounded-md font-heading text-lg font-semibold tracking-tight text-gray-900 dark:text-white"
         >
-          {profile.name}
+          <Logo />
         </Link>
 
         <div className="flex items-center gap-1">
