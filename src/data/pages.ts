@@ -8,7 +8,7 @@ export interface PageMeta {
 // <title> and meta description for each route (see usePageMeta)
 export const pageMeta: Record<'home' | 'projects' | 'experience' | 'education' | 'skills' | 'contact', PageMeta> = {
   home: {
-    title: `${profile.name} | ${profile.title}`,
+    title: `${profile.name} | AP, RUET`,
     description: profile.headline,
   },
   projects: {
